@@ -12,10 +12,6 @@ $ pip install Django
 $ py -m django --version
 #install pillow
 $ pip install pillow
-$ cd projectname/
-$ cp settings_custom.py.edit settings_custom.py
-$ python manage.py migrate
-$ python manage.py runserver
 ```
 Clone project.
 
