@@ -17,3 +17,14 @@ $ cp settings_custom.py.edit settings_custom.py
 $ python manage.py migrate
 $ python manage.py runserver
 ```
+Clone project.
+
+```bash
+
+$ cd projectname/
+$ git clone https://github.com/dipeshkhatiwada/newsportal.git
+# to migrate database
+$ python manage.py migrate
+# start server
+$ python manage.py runserver
+```
