@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% block 'title' %} Home page | BLog {% endblock %}
+{% block 'body' %}
+
+    <div class="page-content">
+				<div class="container">
+
+					<div class="row">
+						<div class="content col-md-12">
+                        {% for blog in blogs %}
+
+							<!-- Post (Standard Format) -->
+							<article class="entry entry__standard entry__with-icon">
+								<header class="entry-header">
+									<div class="entry-author visible-md visible-lg">
+										<img src="" alt="">
+										<span class="author-name">Dan Fisher</span>
+									</div>
+									<h3><a href="blog-post.html">{{blog.title}}</a></h3>
+									<div class="entry-meta">
+										<span class="entry-date"><i class="fa fa-calendar"></i> <a href="#">{{blog.publish_date}}</a></span>
+										<span class="entry-category"><i class="fa fa-folder"></i> <a href="#">{{blog.category}}</a></span>
+										<span class="entry-comments"><i class="fa fa-comments"></i> <a href="#">0 Comments</a></span>
+									</div>
+								</header>
+								<div class="entry-thumb-wrapper">
+									<figure class="alignnone entry-thumb">
+                                        {% if blog.image %}
+										<a href="#"><img src="{{MEDIA_URL}}{{blog.image.url}}" alt=""></a>
+                                        {% endif %}
+									</figure>
+								</div>
+								<div class="excerpt">
+                                    {{blog.description | truncatewords:20}}
+                                </div>
+								<footer class="entry-footer">
+									<a href="#" class="btn btn-primary">Continue Reading</a>
+								</footer>
+							</article>
+							<!-- Post (Standard Format) / End -->
+                             {% endfor %}
+
+
+
+							<div class="text-center">
+								<ul class="pagination-custom list-unstyled list-inline">
+									<li><a href="#" class="btn btn-sm btn-default">«</a></li>
+									<li><a href="#" class="btn btn-sm btn-primary">1</a></li>
+									<li><a href="#" class="btn btn-sm btn-default">2</a></li>
+									<li><a href="#" class="btn btn-sm btn-default">3</a></li>
+									<li><a href="#" class="btn btn-sm btn-default">4</a></li>
+									<li><a href="#" class="btn btn-sm btn-default">5</a></li>
+									<li><a href="#" class="btn btn-sm btn-default">»</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+{% endblock %}

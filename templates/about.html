@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About us</title>
-</head>
-<body>
-    <h1>this is about page</h1>
-    <h2>loaded from template folder</h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Animi consequuntur, dignissimos, dolor doloremque ea est
-        expedita illo inventore laudantium minus modi molestias
-        odit repellendus similique soluta ullam ut vitae voluptates.
-    </p>
-</body>
-</html>
+{% extends 'base/base.html' %}
+{% block 'title' %} About {% endblock %}
+{% block 'body' %}
+<h1>hello Nepal</h1>
+{% endblock %}
