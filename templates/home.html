@@ -34,7 +34,7 @@
                                     {{blog.description | truncatewords:20}}
                                 </div>
 								<footer class="entry-footer">
-									<a href="#" class="btn btn-primary">Continue Reading</a>
+									<a href="{% url 'detail' blog.id %}" class="btn btn-primary">Continue Reading</a>
 								</footer>
 							</article>
 							<!-- Post (Standard Format) / End -->

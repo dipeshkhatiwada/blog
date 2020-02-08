@@ -60,8 +60,14 @@
 						</button>
 						<div class="menu-container">
 							<ul class="header-top-nav header-top-nav__tertiary">
-								<li><a href="page-login.html"><i class="fa fa-user-plus"></i> Register</a></li>
-								<li><a href="page-login.html"><i class="fa fa-sign-in"></i> Login</a></li>
+								{% if request.user.is_authenticated %}
+								<li><a href="{% url 'signout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+								{% else %}
+								<li><a href="{% url 'signup' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+								<li><a href="{% url 'signin' %}"><i class="fa fa-sign-in"></i> Login</a></li>
+								{% endif %}
+
+
 							</ul>
 						</div>
 					</div>

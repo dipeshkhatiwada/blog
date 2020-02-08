@@ -1,0 +1,226 @@
+{% extends 'base/base.html' %}
+
+{% block 'title' %}Blog-{% endblock %}
+
+{% block 'body' %}
+
+ <!-- Page Content -->
+			<div class="page-content">
+				<div class="container">
+
+					<div class="row">
+						<div class="content col-md-8">
+							<!-- Post (Standard Format) -->
+							<article class="entry entry__standard entry__with-icon">
+								<header class="entry-header">
+									<div class="entry-author visible-md visible-lg">
+										<img src="images/samples/post-author1.jpg" alt="">
+										<span class="author-name">Dan Fisher</span>
+									</div>
+									<h3>{{blog.title}}</h3>
+									<div class="entry-meta">
+										<span class="entry-date"><i class="fa fa-calendar"></i> <a href="#">{{blog.publish_date}}</a></span>
+										<span class="entry-category"><i class="fa fa-folder"></i> <a href="#">{{blog.category}} </a></span>
+										<span class="entry-comments"><i class="fa fa-comments"></i> <a href="#">0 Comments</a></span>
+									</div>
+								</header>
+								<div class="entry-thumb-wrapper">
+									<figure class="alignnone entry-thumb">
+										<img src="{{MEDIA_URL}}{{blog.image.url}}" alt="">
+									</figure>
+								</div>
+								<div class="entry-content">
+										{{blog.description}}
+									</div>
+							</article>
+							<!-- Post (Standard Format) / End -->
+
+							<!-- Comments -->
+							<div class="comments-wrapper">
+								<h3>Comments (4)</h3>
+								<ol class="commentlist">
+									<li class="comment">
+										<div class="comment-wrapper">
+											<div class="comment-author vcard">
+												<img src="images/samples/user2-sm.jpg" alt="" class="gravatar">
+												<h5>Teresa Miller</h5>
+												<span class="says">says:</span>
+												<div class="comment-meta">
+													<a href="#">October 27, 2015 5:45pm</a>
+												</div>
+											</div>
+											<div class="comment-body">
+												Construction projects can suffer from preventable financial problems. Underbids happen when builders ask for too little money to complete the project.
+											</div>
+											<div class="comment-reply">
+												<a href="#"><i class="fa fa-reply"></i> Reply</a>
+											</div>
+										</div>
+
+										<ul class="children">
+											<li class="comment">
+												<div class="comment-wrapper">
+													<div class="comment-author vcard">
+														<img src="images/samples/user1-sm.jpg" alt="" class="gravatar">
+														<h5>Kobe Pink</h5>
+														<span class="says">says:</span>
+														<div class="comment-meta">
+															<a href="#">October 27, 2015 5:45pm</a>
+														</div>
+													</div>
+													<div class="comment-body">
+														Fraud is a problem in many fields, but is notoriously prevalent in the construction field.
+													</div>
+													<div class="comment-reply">
+														<a href="#"><i class="fa fa-reply"></i> Reply</a>
+													</div>
+												</div>
+											</li>
+											<li class="comment bypostauthor">
+												<div class="comment-wrapper">
+													<div class="comment-author vcard">
+														<img src="images/samples/user3-sm.jpg" alt="" class="gravatar">
+														<h5>Andrew Black</h5>
+														<span class="says">says:</span>
+														<div class="comment-meta">
+															<a href="#">October 27, 2015 5:45pm</a>
+														</div>
+													</div>
+													<div class="comment-body">
+														Financial planning for the project is intended to ensure that a solid plan with adequate safeguards and contingency plans are in place before the project is started and is required to ensure that the plan is properly executed over the life of the project.
+													</div>
+													<div class="comment-reply">
+														<a href="#"><i class="fa fa-reply"></i> Reply</a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="comment">
+										<div class="comment-wrapper">
+											<div class="comment-author vcard">
+												<img src="images/samples/user4-sm.jpg" alt="" class="gravatar">
+												<h5>Jason Pilot</h5>
+												<span class="says">says:</span>
+												<div class="comment-meta">
+													<a href="#">October 27, 2015 5:45pm</a>
+												</div>
+											</div>
+											<div class="comment-body">
+												Procurement describes the merging of activities undertaken by the client to obtain a building.
+											</div>
+											<div class="comment-reply">
+												<a href="#"><i class="fa fa-reply"></i> Reply</a>
+											</div>
+										</div>
+									</li>
+								</ol>
+							</div>
+							<!-- Comments / End -->
+
+							<!-- Comments Form -->
+							<div id="respond" class="comment-respond">
+								<h3 class="reply-title">Leave a reply</h3>
+								<p class="comment-notes text-muted"><i>Your email address will not be published. Required fields are marked <span class="required">*</span></i></p>
+
+								<form action="#" method="POST" role="form">
+
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group form-grop__icon">
+												<i class="entypo user"></i>
+												<input type="text" class="form-control" placeholder="Name*">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group form-grop__icon">
+												<i class="entypo mail"></i>
+												<input type="email" class="form-control" placeholder="Email*">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<textarea name="textarea" cols="30" rows="10" class="form-control" placeholder="Comment*"></textarea>
+									</div>
+
+									<button type="submit" class="btn btn-primary">Post Comment</button>
+								</form>
+							</div>
+							<!-- Comments Form / End -->
+
+
+						</div>
+
+						<aside class="sidebar col-md-4">
+
+							<hr class="visible-sm visible-xs lg">
+							<!-- Widget :: Tags Cloud -->
+							<div class="widget_tag_cloud widget widget__sidebar">
+								<h4 class="widget-title">Tags</h4>
+								<div class="widget-content">
+									<div class="tagcloud">
+										<a href="#">painting</a>
+										<a href="#">design</a>
+										<a href="#">refinish</a>
+										<a href="#">pools</a>
+										<a href="#">handiwork</a>
+										<a href="#">furniture</a>
+										<a href="#">drywall</a>
+										<a href="#">electrical</a>
+									</div>
+								</div>
+							</div>
+							<!-- /Widget :: Tags Cloud -->
+
+							<!-- Widget :: Text Widget -->
+							<div class="widget_text widget widget__sidebar">
+								<h4 class="widget-title">Short Info</h4>
+								<div class="widget-content">
+
+								</div>
+							</div>
+							<!-- /Widget :: Text Widget -->
+
+							<!-- Widget :: Latest Posts -->
+							<div class="widget_latest-posts widget widget__sidebar">
+								<h4 class="widget-title">Latest Posts</h4>
+								<div class="widget-content">
+									<ul class="latest-posts-list">
+										<li>
+											<figure class="thumbnail"><a href="#"><img src="images/samples/post-img1-sm.jpg" alt=""></a></figure>
+											<h5 class="title"><a href="#">Build an Emergency Kit</a></h5>
+											<span class="date">April, 18 2015</span>
+										</li>
+										<li>
+											<figure class="thumbnail"><a href="#"><img src="images/samples/post-img2-sm.jpg" alt=""></a></figure>
+											<h5 class="title"><a href="#">DIY Safety Tips</a></h5>
+											<span class="date">March, 21 2015</span>
+										</li>
+										<li>
+											<figure class="thumbnail"><a href="#"><img src="images/samples/post-img3-sm.jpg" alt=""></a></figure>
+											<h5 class="title"><a href="#">3 Ways for Woodworkers to Save Money</a></h5>
+											<span class="date">March, 21 2015</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- /Widget :: Latest Posts -->
+
+							<!-- Widget :: Flickr -->
+							<div class="widget_flickr widget widget__sidebar">
+								<h4 class="widget-title">Flickr</h4>
+								<div class="widget-content">
+									<!-- Flickr images will appear here -->
+									<ul class="flickr-feed"></ul>
+								</div>
+							</div>
+							<!-- /Widget :: Flickr -->
+
+						</aside>
+					</div>
+
+				</div>
+			</div>
+			<!-- Page Content / End -->
+{% endblock %}

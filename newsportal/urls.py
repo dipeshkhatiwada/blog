@@ -23,4 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('about/', views.about),
+    path('blog/<int:id>', views.detail,name='detail'),
+    path('signup/', views.signup, name='signup'),
+    path('login/', views.signin, name='signin'),
+    path('logout/', views.signout, name='signout'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('create-post/', views.create_post, name='create_post'),
+    path('edit-post/<int:id>', views.edit_post, name='edit_post'),
+    path('delete-post/<int:id>', views.delete_post, name='delete_post'),
+
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

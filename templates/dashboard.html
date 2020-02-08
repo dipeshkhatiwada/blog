@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block 'title' %}Dashboard{% endblock %}
+
+{% block 'body' %}
+<!--                {% include 'component/message.html' %}-->
+
+    <div class="container">
+       {% include 'component/sidenav.html' %}
+        <div class="col-md-9">
+            {% include 'component/message.html' %}
+            {% for blog in blogs %}
+            <h3>{{blog.title}}</h3>
+            <p>{{blog.description | truncatewords:10}}</p>
+            <a href="{% url 'edit_post'  blog.id %}" class="btn btn-warning">edit</a>
+            <a href="{% url 'delete_post'  blog.id %}" class="btn btn-danger" onclick="return confirm('Are you sure want to delete?')">delete</a>
+            <hr>
+            {% endfor %}
+        </div>
+
+
+    </div>
+{% endblock %}
